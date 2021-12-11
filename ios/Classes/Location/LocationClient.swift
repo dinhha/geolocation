@@ -172,7 +172,7 @@ class LocationClient : NSObject, CLLocationManagerDelegate {
         if #available(iOS 10.0, *),
           status.failure!.error!.type == .permissionDenied,
           permission.openSettingsIfDenied,
-          let appSettingURl = URL(string: UIApplication.openSettingsURLString),
+          let appSettingURl = URL(string: UIApplicationOpenSettingsURLString),
           UIApplication.shared.canOpenURL(appSettingURl) {
           permissionSettingsCallback = {
             let refreshedStatus: ServiceStatus<T> = self.currentServiceStatus(with: permission.value)
